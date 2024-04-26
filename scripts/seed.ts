@@ -18,6 +18,32 @@ async function main() {
             ]
         })
 
+        // Create topics for existing categories
+        const categories = await database.category.findMany();
+        for (const category of categories) {
+            await database.topic.create({
+                data: {
+                    title: `Sample Topic for ${category.name}`,
+                    categoryId: category.id,
+                    // Assuming userId and categoryId are already present in your database
+                    userId: "sample_user_id",
+                },
+            });
+        }
+
+        // Create posts for existing topics
+        const topics = await database.topic.findMany();
+        for (const topic of topics) {
+            await database.post.create({
+                data: {
+                    message: `Sample post for ${topic.title}`,
+                    topicId: topic.id,
+                    // Assuming userId and topicId are already present in your database
+                    userId: "sample_user_id",
+                },
+            });
+        }
+
         console.log("Success");
 
     } catch (error) {
