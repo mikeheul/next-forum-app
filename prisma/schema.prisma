@@ -1,0 +1,56 @@
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+    relationMode = "prisma"
+}
+
+generator client {
+    provider = "prisma-client-js"
+    previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+model Category {
+    id String @id @default(uuid())
+    name String @unique
+
+    topics Topic[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Topic {
+    id String @id @default(uuid())
+    title String @db.Text
+    userId String
+
+    categoryId String
+    category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+    posts Post[]
+
+    isLocked Boolean @default(false)
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([categoryId])
+}
+
+model Post {
+    id String @id @default(uuid())
+    message String @db.Text
+
+    userId String
+
+    topicId String
+    topic Topic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([topicId])
+}
+
+// npx prisma generate
+// npx prisma db push
