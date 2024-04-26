@@ -12,7 +12,7 @@ export const Navbar = () => {
 
     return (
         <>
-        <nav className='flex items-center flex-wrap bg-emerald-700 p-3 '>
+        <nav className='flex items-center flex-wrap bg-emerald-700 p-6'>
             <Link className='text-2xl text-white font-bold' href='/categories'>
                 Forum
             </Link>

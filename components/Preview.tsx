@@ -16,6 +16,7 @@ const Preview = ({
     
     return ( 
         <ReactQuill
+            className="p-6"
             theme="bubble"
             value={value}
             readOnly

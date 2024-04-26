@@ -48,9 +48,9 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
                                 {topic.title}
                             </h2>
                         </div>
-                        <div className="flex items-center text-sm text-gray-600">
-                            <span className="mr-2">Author: {topic.userId}</span>
-                            <span>At {formatDateTime(topic.createdAt)}</span>
+                        <div className="flex items-center text-xs text-gray-600">
+                            <span className="mr-2">{topic.userId}</span>
+                            <span>{formatDateTime(topic.createdAt)}</span>
                         </div>
                     </div>
                 </Link>
