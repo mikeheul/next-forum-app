@@ -36,7 +36,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
                     key={topic.id}
                     href={`/posts/${topic.id}`}    
                 >
-                    <div key={topic.id} className="bg-slate-200 hover:bg-slate-200/80 shadow-sm rounded-md mb-4 p-4 border border-slate-200">
+                    <div key={topic.id} className="bg-slate-100 hover:bg-slate-200/80 shadow-sm rounded-md mb-4 p-4 border border-slate-200">
                         <div className="relative">
                             {topic.isLocked && (
                                 <Lock 

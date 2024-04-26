@@ -1,5 +1,7 @@
 import { db } from "@/lib/db";
 import Link from "next/link";
+import CategoryCard from "./_components/CategoryCard";
+import TitlePage from "@/components/TitlePage";
 
 const CategoriesPage = async () => {
 
@@ -11,8 +13,19 @@ const CategoriesPage = async () => {
 
     return (
         <div className="p-6">
-            <h1 className="text-2xl">Categories</h1>
-            <ul>
+            <TitlePage title="Categories" />
+
+            <div className="grid grid-cols-6 gap-x-3 gap-y-3">
+                {categories.map(category => (
+                    <CategoryCard 
+                        key={category.id}
+                        name={category.name}
+                        url={category.id}
+                    />
+                ))}
+            </div>
+
+            {/* <ul>
                 {categories.map(category => (
                     <Link 
                         className="flex flex-col p-2 hover:bg-slate-100"
@@ -22,7 +35,7 @@ const CategoriesPage = async () => {
                         {category.name}
                     </Link>
                 ))}
-            </ul>
+            </ul> */}
         </div>
     );
 }
