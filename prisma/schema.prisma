@@ -22,10 +22,10 @@ model Category {
 model Topic {
     id String @id @default(uuid())
     title String @db.Text
-    userId String
+    userId String?
 
-    categoryId String
-    category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+    categoryId String?
+    category Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 
     posts Post[]
 
@@ -43,8 +43,8 @@ model Post {
 
     userId String
 
-    topicId String
-    topic Topic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+    topicId String?
+    topic Topic? @relation(fields: [topicId], references: [id], onDelete: Cascade)
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt

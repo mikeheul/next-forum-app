@@ -21,6 +21,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <ConfettiProvider />
         <ToastProvider />
+        <nav>
+          <ul>
+            <li><a href="/categories">Home</a></li>
+          </ul>
+        </nav>
         {children}
       </body>
     </html>

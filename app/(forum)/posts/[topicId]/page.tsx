@@ -1,5 +1,7 @@
 import { db } from "@/lib/db";
 import { formatDateTime } from "@/lib/format-datetime";
+import PostForm from "./_components/PostForm";
+import Banner from "@/components/Banner";
 
 const PostsPage = async ({ params }: { params: { topicId: string } }) => {
 
@@ -31,6 +33,16 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
                     </div>
                 ))}
             </ul>
+
+            {!topic?.isLocked ? (
+                <PostForm 
+                    topicId={topic?.id}
+                />
+            ): (
+                <Banner 
+                    label="This topic is locked!"
+                />
+            )}
         </div>
     );
 }
