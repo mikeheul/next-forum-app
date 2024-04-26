@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import Link from "next/link";
 
 const CategoriesPage = async () => {
 
@@ -13,7 +14,13 @@ const CategoriesPage = async () => {
             <h1 className="text-2xl">Categories</h1>
             <ul>
                 {categories.map(category => (
-                    <li key={category.id}>{category.name}</li>
+                    <Link 
+                        className="flex flex-col p-2 hover:bg-slate-100"
+                        key={category.id}
+                        href={`/topics/${category.id}`}    
+                    >
+                        {category.name}
+                    </Link>
                 ))}
             </ul>
         </div>
