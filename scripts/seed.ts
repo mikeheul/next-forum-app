@@ -1,4 +1,5 @@
 const { PrismaClient } = require("@prisma/client")
+const faker = require("faker");
 
 const database = new PrismaClient();
 
@@ -23,10 +24,10 @@ async function main() {
         for (const category of categories) {
             await database.topic.create({
                 data: {
-                    title: `Sample Topic for ${category.name}`,
+                    title: faker.lorem.words(3), // Random topic title
                     categoryId: category.id,
-                    // Assuming userId and categoryId are already present in your database
-                    userId: "sample_user_id",
+                    userId: "sample_user_id", // Replace with actual user ID
+                    createdAt: faker.date.recent(), // Random createdAt datetime
                 },
             });
         }
@@ -36,10 +37,10 @@ async function main() {
         for (const topic of topics) {
             await database.post.create({
                 data: {
-                    message: `Sample post for ${topic.title}`,
+                    message: faker.lorem.paragraph(), // Random post message
                     topicId: topic.id,
-                    // Assuming userId and topicId are already present in your database
-                    userId: "sample_user_id",
+                    userId: "sample_user_id", // Replace with actual user ID
+                    createdAt: faker.date.between(topic.createdAt, new Date()), // Random createdAt datetime between topic creation and now
                 },
             });
         }
