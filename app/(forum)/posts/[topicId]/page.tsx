@@ -2,6 +2,11 @@ import { db } from "@/lib/db";
 import { formatDateTime } from "@/lib/format-datetime";
 import PostForm from "./_components/PostForm";
 import Banner from "@/components/Banner";
+import Preview from "@/components/Preview";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import BackButton from "@/components/BackButton";
+import TitlePage from "@/components/TitlePage";
 
 const PostsPage = async ({ params }: { params: { topicId: string } }) => {
 
@@ -22,17 +27,25 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
 
     return (
         <div className="p-6">
-            <h1 className="text-2xl">Posts from {topic?.title}</h1>
-            <ul>
-                {posts.map(post => (
-                    <div
-                        className=""
-                        key={post.id}  
-                    >
-                        {post.message} by {post.userId} at {formatDateTime(post.createdAt)}
+
+            <BackButton />
+
+            <TitlePage title={`${topic?.title}`} />
+
+            {posts.map(post => (
+                <div
+                    className="flex flex-col md:flex-row gap-x-2 border border-slate-200 mb-2"
+                    key={post.id}  
+                >
+                    <div className="p-6 bg-emerald-700 text-white min-w-[300px]">
+                        <p className="text-sm">{post.userId}</p>
+                        <p className="text-xs">{formatDateTime(post.createdAt)}</p>
                     </div>
-                ))}
-            </ul>
+                    <Preview 
+                        value={post.message}   
+                    />
+                </div>
+            ))}
 
             {!topic?.isLocked ? (
                 <PostForm 

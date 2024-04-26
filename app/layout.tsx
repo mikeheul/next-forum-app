@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ConfettiProvider } from "@/components/providers/confetti-provider";
 import ToastProvider from "@/components/providers/toaster-provider";
+import { Navbar } from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ConfettiProvider />
         <ToastProvider />
-        <nav>
-          <ul>
-            <li><a href="/categories">Home</a></li>
-          </ul>
-        </nav>
+        <Navbar />
         {children}
       </body>
     </html>

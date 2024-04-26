@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import Editor from "@/components/Editor";
 import { useConfettiStore } from "@/hooks/use-confetti-store";
+import SubTitlePage from "@/components/SubTitlePage";
 
 interface PostFormProps {
     topicId?: string;
@@ -62,7 +63,7 @@ const PostForm = ({
 
     return (
         <div>
-            <h2 className="text-xl font-medium">Add a New Post</h2>
+            <SubTitlePage title="Add a New Post" />
 
             <Form {...form}>
                 <form

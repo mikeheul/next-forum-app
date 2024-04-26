@@ -18,6 +18,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import Editor from "@/components/Editor";
+import SubTitlePage from "@/components/SubTitlePage";
 
 interface TopicFormProps {
     categoryId?: string;
@@ -62,7 +64,7 @@ const TopicForm = ({
 
     return (
         <div>
-            <h2 className="text-xl font-medium">Add a New Topic</h2>
+            <SubTitlePage title="Add a New Topic" />
 
             <Form {...form}>
                 <form
@@ -91,12 +93,15 @@ const TopicForm = ({
                         render={({ field }) => (
                             <FormItem>
                                 <FormControl>
-                                    <Textarea
+                                    <Editor 
+                                        {...field}
+                                    />
+                                    {/* <Textarea
                                         rows={12}
                                         disabled={isSubmitting}
                                         placeholder="First post...'"
                                         {...field}
-                                    />
+                                    /> */}
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
