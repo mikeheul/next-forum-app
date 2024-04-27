@@ -1,7 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import axios from "axios";
+import { LockIcon, UnlockIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
@@ -34,7 +36,24 @@ const LockButton = ({
     }
 
     return (
-        <Button onClick={onClick}>
+        <Button 
+            className={cn(
+                "mb-4",
+                !isLocked ? "bg-red-500 hover:bg-red-500/80" : "bg-green-800 hover:bg-green-800/80"
+            )}
+            onClick={onClick}
+        >
+            {!isLocked ? (
+                <LockIcon 
+                    size={12}
+                    className="mr-2"
+                    />
+            ) : (
+                <UnlockIcon 
+                    size={12}
+                    className="mr-2"
+                />
+            ) }
             {isLocked ? "Unlock" : "Lock"}
         </Button>
     );
