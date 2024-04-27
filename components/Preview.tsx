@@ -1,24 +1,27 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import "react-quill/dist/quill.bubble.css"
 
 interface PreviewProps {
     value: string;
-    isCenter: boolean;
+    align: boolean;
 }
 
 const Preview = ({
     value,
-    isCenter
+    align
 }: PreviewProps) => {
 
     const ReactQuill = useMemo(() => dynamic(() => import("react-quill"), {ssr: false }), []);
     
     return ( 
         <ReactQuill
-            className="flex flex-col items-center justify-center p-6"
+            className={cn(
+                align && "p-0"
+            )}
             theme="bubble"
             value={value}
             readOnly

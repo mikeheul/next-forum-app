@@ -17,7 +17,6 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import Editor from "@/components/Editor";
 import SubTitlePage from "@/components/SubTitlePage";
 
@@ -53,7 +52,7 @@ const TopicForm = ({
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-            await axios.post(`/api/topic/${categoryId}`, { title: values.title, message: values.message, categoryId });
+            await axios.post(`/api/category/${categoryId}`, { title: values.title, message: values.message, categoryId });
             toast.success("Topic added !");
             form.reset();
             router.refresh();
