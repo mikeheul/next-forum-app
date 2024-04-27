@@ -18,6 +18,13 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
         where: {
             categoryId: params.categoryId
         },
+        include: {
+            posts: {
+                select: {
+                    id: true
+                }
+            }
+        },
         orderBy: {
             createdAt: 'desc'
         }
@@ -53,6 +60,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
                             <span className="mr-2">{topic.userId}</span>
                             <span>{formatDateTime(topic.createdAt)}</span>
                         </div>
+                        <p>{topic.posts.length} post{topic.posts.length > 1 ? 's' : ''}</p>
                     </div>
                 </Link>
             ))}

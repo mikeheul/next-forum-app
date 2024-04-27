@@ -14,7 +14,7 @@ const BackButton = () => {
     return (
         <Link href="#" onClick={goBack}>
             <Button
-                className='bg-white mb-3 text-emerald-700 border-2 border-emerald-700 hover:border-emerald-700/70 hover:text-emerald-700/70 hover:bg-white'
+                className='bg-white mb-3 text-slate-700 border-2 border-slate-700 hover:border-slate-700/70 hover:text-slate-700/70 hover:bg-white'
             >
                 Back
             </Button>
