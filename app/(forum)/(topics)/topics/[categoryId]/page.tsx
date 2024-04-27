@@ -42,14 +42,14 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
                             {topic.isLocked && (
                                 <Lock 
                                     size={25}
-                                    className="absolute top-0 right-0 rounded-md p-[6px] bg-red-500 text-white"
+                                    className="block mb-2 md:absolute top-0 right-0 rounded-md p-[6px] bg-red-500 text-white"
                                 />
                             )}    
                             <h2 className="text-lg font-semibold mb-2">
                                 {topic.title}
                             </h2>
                         </div>
-                        <div className="flex items-center text-xs text-gray-600">
+                        <div className="flex flex-col md:flex-row text-xs text-gray-600">
                             <span className="mr-2">{topic.userId}</span>
                             <span>{formatDateTime(topic.createdAt)}</span>
                         </div>
