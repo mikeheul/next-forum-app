@@ -38,7 +38,7 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
                     className="flex flex-col md:flex-row gap-x-2 border border-slate-200 mb-2"
                     key={post.id}  
                 >
-                    <div className="p-6 bg-emerald-700 text-white min-w-[300px]">
+                    <div className="flex flex-col justify-center p-6 bg-emerald-700 text-white min-w-[300px]">
                         <p className="text-sm">{post.userId}</p>
                         <p className="text-xs">{formatDateTime(post.createdAt)}</p>
                     </div>
