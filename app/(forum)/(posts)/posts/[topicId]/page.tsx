@@ -61,7 +61,7 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
                             <p className="text-xs">{formatDateTime(post.createdAt)}</p>
                         </div>
                         <div className="flex flex-col p-6">
-                            <div>{topic?.title}</div>
+                            <p className="text-sm font-light italic">{topic?.title}</p>
                             <Preview 
                                 value={post.message} 
                                 align={false}  

@@ -60,7 +60,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
                             <span className="mr-2">{topic.userId}</span>
                             <span>{formatDateTime(topic.createdAt)}</span>
                         </div>
-                        <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full dark:bg-blue-900 dark:text-blue-300 mt-3">{topic.posts.length} post{topic.posts.length > 1 ? 's' : ''}</span>
+                        <span className="inline-block bg-slate-300 text-slate-800 text-xs font-semibold px-2 py-1 rounded-full dark:bg-slate-900 dark:text-slate-300 mt-3">{topic.posts.length} post{topic.posts.length > 1 ? 's' : ''}</span>
                     </div>
                 </Link>
             ))}
