@@ -84,12 +84,6 @@ const PostForm = ({
                                     <Editor
                                         {...field}
                                     />
-                                    {/* <Textarea
-                                        rows={12}
-                                        disabled={isSubmitting}
-                                        placeholder="Your post...'"
-                                        {...field}
-                                    /> */}
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
