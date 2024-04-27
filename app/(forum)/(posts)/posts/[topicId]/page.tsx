@@ -31,10 +31,12 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
 
             <TitlePage title={`${topic?.title}`} />
 
-            <LockButton 
-                topicId={params.topicId}
-                isLocked={!!topic?.isLocked}
-            />
+            {topic?.userId === "aaa" && (
+                <LockButton 
+                    topicId={params.topicId}
+                    isLocked={!!topic?.isLocked}
+                />
+            )}
 
             <div className="p-6 mb-4 rounded-lg border border-slate-400">
                 <p>{topic?.userId}</p> 
