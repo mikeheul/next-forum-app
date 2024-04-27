@@ -1,4 +1,4 @@
-export const formatDateTime = (datetime: Date) => {
+export const formatDateTime = (datetime?: Date) => {
     return new Intl.DateTimeFormat(
         'en-US',
         {

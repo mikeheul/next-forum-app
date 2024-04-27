@@ -5,11 +5,13 @@ import { useMemo } from "react";
 import "react-quill/dist/quill.bubble.css"
 
 interface PreviewProps {
-    value: string
+    value: string;
+    isCenter: boolean;
 }
 
 const Preview = ({
-    value
+    value,
+    isCenter
 }: PreviewProps) => {
 
     const ReactQuill = useMemo(() => dynamic(() => import("react-quill"), {ssr: false }), []);

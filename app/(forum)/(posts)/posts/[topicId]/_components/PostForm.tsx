@@ -15,12 +15,11 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import Editor from "@/components/Editor";
 import { useConfettiStore } from "@/hooks/use-confetti-store";
 import SubTitlePage from "@/components/SubTitlePage";
+
 
 interface PostFormProps {
     topicId?: string;
@@ -50,6 +49,12 @@ const PostForm = ({
     const { isSubmitting, isValid } = form.formState;
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
+
+        if (values.message.replace(/<(.|\n)*?>/g, '').trim().length === 0) {
+            toast.error("Please type something before submitting.");
+            return;
+        }
+
         try {
             await axios.post(`/api/post/${topicId}`, { message: values.message, topicId });
             toast.success("Post added !");
