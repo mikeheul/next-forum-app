@@ -31,6 +31,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
             <TitlePage title={`${category?.name}`} />
             
             {topics.map(topic => (
+                // TODO : TopicCard
                 <Link 
                     className="flex flex-col"
                     key={topic.id}

@@ -33,6 +33,7 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
             <TitlePage title={`${topic?.title}`} />
 
             {posts.map(post => (
+                // TODO : PostCard
                 <div
                     className="flex flex-col md:flex-row gap-x-2 border border-slate-200 mb-2"
                     key={post.id}  
