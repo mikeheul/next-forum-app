@@ -1,6 +1,4 @@
 import { db } from "@/lib/db";
-import Link from "next/link";
-import CategoryCard from "./_components/CategoryCard";
 import TitlePage from "@/components/TitlePage";
 import CategoriesList from "./_components/CategoriesList";
 

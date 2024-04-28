@@ -2,7 +2,7 @@
 
 import Preview from "@/components/Preview";
 import { formatDateTime } from "@/lib/format-datetime";
-import { Post, Topic } from "@prisma/client";
+import { Post } from "@prisma/client";
 
 interface PostCardProps {
     topic: any;

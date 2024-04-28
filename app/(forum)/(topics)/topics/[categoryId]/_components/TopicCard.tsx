@@ -1,7 +1,6 @@
 "use client";
 
 import { formatDateTime } from "@/lib/format-datetime";
-import { Topic } from "@prisma/client";
 import { Lock } from "lucide-react";
 import Link from "next/link";
 

@@ -1,8 +1,5 @@
 import { db } from "@/lib/db";
-import { formatDateTime } from "@/lib/format-datetime";
-import Link from "next/link";
 import TopicForm from "./_components/TopicForm";
-import { Lock } from "lucide-react";
 import BackButton from "@/components/BackButton";
 import TitlePage from "@/components/TitlePage";
 import TopicCard from "./_components/TopicCard";
