@@ -17,12 +17,20 @@ const CategoriesPage = async () => {
         }
     });
 
+    const categoriesWithTopicCount = categories.map(category => ({
+        ...category,
+        topicCount: category.topics.length
+    }));
+    
+    // Sort the categories by the count of topics in descending order
+    categoriesWithTopicCount.sort((a, b) => b.topicCount - a.topicCount);
+
     return (
         <div className="p-6">
             <TitlePage title="Categories" />
 
             <CategoriesList
-                categories={categories}
+                categories={categoriesWithTopicCount}
             />
         </div>
     );
