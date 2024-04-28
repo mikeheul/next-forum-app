@@ -15,7 +15,7 @@ const PostCard = ({
 }: PostCardProps) => {
     return (
         <div
-            className="flex flex-col md:flex-row gap-x-2 border border-slate-200 mb-2"
+            className="flex flex-col md:flex-row gap-x-2 border rounded-lg overflow-hidden border-slate-200 mb-4"
             key={post.id}  
         >
             <div className="flex flex-col justify-center p-6 bg-slate-700 text-white md:min-w-[300px]">

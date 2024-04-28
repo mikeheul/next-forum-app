@@ -95,12 +95,6 @@ const TopicForm = ({
                                     <Editor 
                                         {...field}
                                     />
-                                    {/* <Textarea
-                                        rows={12}
-                                        disabled={isSubmitting}
-                                        placeholder="First post...'"
-                                        {...field}
-                                    /> */}
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -112,7 +106,7 @@ const TopicForm = ({
                             type="submit"
                             disabled={!isValid || isSubmitting}
                         >
-                            Add
+                            Create
                         </Button>
                     </div>
                 </form>
