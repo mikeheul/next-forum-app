@@ -12,7 +12,7 @@ const CategoriesList = ({
 }: CategoriesListProps) => {
 
     return (
-        <div className="flex flex-col w-full md:flex-row md:flex-wrap gap-x-3 gap-y-3">
+        <div className="flex flex-col justify-center lg:justify-start w-full md:flex-row md:flex-wrap gap-x-3 gap-y-3">
             {categories.map((category:any) => (
                 <CategoryCard 
                     key={category.id}

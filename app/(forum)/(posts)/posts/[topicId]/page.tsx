@@ -43,8 +43,8 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
             <div className="relative p-6 mb-4 rounded-lg border bg-sky-900 text-white border-slate-400">
                 {topic?.isLocked && (
                     <Lock 
-                        size={25}
-                        className="block mb-2 md:absolute top-2 right-2 rounded-md p-[6px] bg-red-500 text-white"
+                        size={30}
+                        className="mb-2 md:absolute top-5 right-5 rounded-md p-[6px] bg-red-500 text-white"
                     />
                 )}    
                 <div className="flex gap-x-2 text-sm text-slate-300"><UserIcon size={20} /> {topic?.userId}</div> 

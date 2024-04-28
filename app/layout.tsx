@@ -20,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ConfettiProvider />
-        <ToastProvider />
-        <Navbar />
-        {children}
+          <ConfettiProvider />
+          <ToastProvider />
+          <Navbar />
+          <main className="p-2 md:p-6">
+            {children}
+          </main>
       </body>
     </html>
   );
