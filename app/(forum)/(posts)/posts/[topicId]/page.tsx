@@ -7,6 +7,7 @@ import BackButton from "@/components/BackButton";
 import TitlePage from "@/components/TitlePage";
 import LockButton from "./_components/LockButton";
 import { UserIcon, Calendar } from "lucide-react";
+import PostCard from "./_components/PostCard";
 
 const PostsPage = async ({ params }: { params: { topicId: string } }) => {
 
@@ -51,24 +52,12 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
             </div>
 
             {posts.map((post, index) => (
-                // TODO : PostCard
                 index !== 0 ? (
-                    <div
-                        className="flex flex-col md:flex-row gap-x-2 border border-slate-200 mb-2"
-                        key={post.id}  
-                    >
-                        <div className="flex flex-col justify-center p-6 bg-slate-700 text-white md:min-w-[300px]">
-                            <p className="text-sm">{post.userId}</p>
-                            <p className="text-xs">{formatDateTime(post.createdAt)}</p>
-                        </div>
-                        <div className="flex flex-col p-6">
-                            <p className="text-sm font-light italic">{topic?.title}</p>
-                            <Preview 
-                                value={post.message} 
-                                align={false}  
-                            />
-                        </div>
-                    </div>
+                    <PostCard
+                        key={post.id}
+                        topic={topic}
+                        post={post}
+                    />
                 ) : null
             ))}
 
