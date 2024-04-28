@@ -4,6 +4,7 @@ import "./globals.css";
 import { ConfettiProvider } from "@/components/providers/confetti-provider";
 import ToastProvider from "@/components/providers/toaster-provider";
 import { Navbar } from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,8 +24,11 @@ export default function RootLayout({
           <ConfettiProvider />
           <ToastProvider />
           <Navbar />
-          <main className="p-2 md:p-6">
-            {children}
+          <main className="flex justify-between">
+            <div className="flex flex-col w-full h-full p-2 md:p-6">
+              {children}
+            </div>
+            {/* <Sidebar /> */}
           </main>
       </body>
     </html>

@@ -34,7 +34,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
             <BackButton />
 
             <TitlePage title={`${category?.name}`} />
-            
+
             {topics.map(topic => (
                 <TopicCard 
                     key={topic.id}
