@@ -73,7 +73,7 @@ const DeleteButton = ({
             <AlertDialog open={isOpen} onOpenChange={onClose}>
                 <AlertDialogContent>
                     <AlertDialogHeader>Confirm deletion</AlertDialogHeader>
-                    <AlertDialogDescription>Are you sure you want to delete this topic?</AlertDialogDescription>
+                    <AlertDialogDescription>Are you sure you want to delete this topic ?</AlertDialogDescription>
                     <AlertDialogFooter>
                         <Button onClick={onDeleteConfirmed}>Yes</Button>
                         <Button variant="ghost" onClick={onClose}>Cancel</Button>
