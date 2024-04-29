@@ -39,6 +39,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
                 <TopicCard 
                     key={topic.id}
                     topic={topic}
+                    categoryId={params.categoryId}
                 />
             ))}
 
