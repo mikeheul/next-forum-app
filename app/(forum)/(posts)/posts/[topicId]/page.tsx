@@ -5,16 +5,16 @@ import Banner from "@/components/Banner";
 import Preview from "@/components/Preview";
 import BackButton from "@/components/BackButton";
 import TitlePage from "@/components/TitlePage";
-import LockButton from "./_components/LockButton";
 import { UserIcon, Calendar, Lock } from "lucide-react";
 import PostCard from "./_components/PostCard";
+import Actions from "./_components/Actions";
 
 const PostsPage = async ({ params }: { params: { topicId: string } }) => {
 
     const topic = await db.topic.findUnique({
         where: {
             id: params.topicId
-        }
+        },
     })
 
     const posts = await db.post.findMany({
@@ -34,7 +34,8 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
             <TitlePage title={`${topic?.title}`} />
 
             {topic?.userId === "aaa" && (
-                <LockButton 
+                <Actions 
+                    categoryId={topic.categoryId}
                     topicId={params.topicId}
                     isLocked={!!topic?.isLocked}
                 />
