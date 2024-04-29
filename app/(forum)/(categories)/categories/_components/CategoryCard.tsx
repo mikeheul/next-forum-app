@@ -1,6 +1,7 @@
 "use client";
 
 import Badge from "@/components/Badge";
+import { cn } from "@/lib/utils";
 import { Category } from "@prisma/client";
 import { LucideIcon } from "lucide-react";
 import Link from "next/link";
@@ -9,17 +10,19 @@ interface CategoryCardProps {
     category: Category;
     topicsCount: number;
     icon: LucideIcon;
+    bgColor: string;
 }
 
 const CategoryCard = ({
     category,
     topicsCount,
-    icon: Icon
+    icon: Icon,
+    bgColor
 }: CategoryCardProps) => {
     return (
         <Link href={`/topics/${category.id}`}>
-            <div className="flex flex-col gap-y-2 w-full items-center justify-center border border-slate-200 shadow-lg md:w-[200px] h-[200px] hover:bg-slate-100 rounded-lg">
-                <Icon className="text-sky-800" size={30} />
+            <div className={cn("flex flex-col gap-y-2 w-full items-center justify-center border border-slate-200 text-white shadow-xl hover:-translate-y-2 transition duration-500 md:w-[200px] h-[200px] rounded-lg", bgColor)}>
+                <Icon className="text-white" size={30} />
                 <p>{category.name}</p>
                 <Badge
                     count={topicsCount}
