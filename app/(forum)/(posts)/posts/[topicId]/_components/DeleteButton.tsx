@@ -63,7 +63,6 @@ const DeleteButton = ({
             </Button>
             
             <AlertDialog open={isOpen} onOpenChange={onClose}>
-                <AlertDialogOverlay />
                 <AlertDialogContent>
                     <AlertDialogHeader>Confirm deletion</AlertDialogHeader>
                     <AlertDialogDescription>Are you sure you want to delete this topic?</AlertDialogDescription>
