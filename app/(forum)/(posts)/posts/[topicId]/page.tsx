@@ -33,6 +33,7 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
 
             <TitlePage title={`${topic?.title}`} />
 
+            <div className="mb-4">
             {topic?.userId === "aaa" && (
                 <Actions 
                     categoryId={topic.categoryId}
@@ -40,6 +41,7 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
                     isLocked={!!topic?.isLocked}
                 />
             )}
+            </div>
 
             <div className="relative p-6 mb-4 rounded-lg border bg-sky-900 text-white border-slate-400">
                 {topic?.isLocked && (

@@ -60,7 +60,7 @@ const DeleteButton = ({
         <>
             <Button 
                 className={cn(
-                    "mb-4 bg-slate-700"
+                    "bg-slate-700"
                 )}
                 onClick={onDeleteClick}
             >
