@@ -10,7 +10,7 @@ const Badge = ({
     content
 }: BadgeProps) => {
     return (
-        <span className="inline-block bg-slate-300 text-slate-800 text-xs font-semibold px-2 py-1 rounded-full dark:bg-slate-900 dark:text-slate-300 mt-3">{count} {content}{count > 1 ? 's' : ''}</span>
+        <span className="inline-block bg-slate-300 text-slate-800 text-xs font-semibold px-3 py-1 rounded-full dark:bg-slate-900 dark:text-slate-300 mt-3">{count} {content}{count > 1 ? 's' : ''}</span>
     );
 }
 

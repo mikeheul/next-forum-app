@@ -12,12 +12,12 @@ export const Navbar = () => {
 
     return (
         <>
-        <nav className='flex items-center flex-wrap bg-slate-700 p-6'>
+        <nav className='flex items-center flex-wrap bg-slate-700 px-8 md:px-12 py-6'>
             <Link className='text-2xl text-white font-bold' href='/categories'>
                 Forum
             </Link>
             <button
-                className=' inline-flex p-3 hover:bg-slate-800 rounded lg:hidden text-white ml-auto hover:text-white outline-none'
+                className='inline-flex p-3 hover:bg-slate-800 rounded lg:hidden text-white ml-auto hover:text-white outline-none'
                 onClick={handleClick}
             >
             <svg
@@ -41,7 +41,7 @@ export const Navbar = () => {
                     active ? '' : 'hidden'
                 }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
             >
-                <div className='text-white lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto gap-x-2'>
+                <div className='text-white lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto gap-x-2 transition-all duration-500'>
                     <Link href='/'>
                         Register
                     </Link>

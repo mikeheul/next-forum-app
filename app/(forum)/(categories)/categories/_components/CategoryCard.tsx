@@ -28,6 +28,10 @@ const CategoryCard = ({
                     count={topicsCount}
                     content="topic"
                 />
+                {/* <Badge
+                    count={10}
+                    content="post"
+                /> */}
             </div>
         </Link>
     );

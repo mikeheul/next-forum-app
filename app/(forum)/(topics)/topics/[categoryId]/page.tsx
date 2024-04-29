@@ -3,6 +3,7 @@ import TopicForm from "./_components/TopicForm";
 import BackButton from "@/components/BackButton";
 import TitlePage from "@/components/TitlePage";
 import TopicCard from "./_components/TopicCard";
+import Badge from "@/components/Badge";
 
 const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
 

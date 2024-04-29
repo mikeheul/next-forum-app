@@ -94,7 +94,7 @@ const PostForm = ({
                             type="submit"
                             disabled={!isValid || isSubmitting}
                         >
-                            Post
+                            Reply
                         </Button>
                     </div>
                 </form>
