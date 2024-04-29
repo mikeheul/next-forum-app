@@ -77,7 +77,7 @@ const TopicForm = ({
                             <FormItem>
                                 <FormControl>
                                     <Input 
-                                        placeholder="Title...'"
+                                        placeholder="Title..."
                                         {...field}
                                     />
                                 </FormControl>

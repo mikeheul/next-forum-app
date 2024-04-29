@@ -34,7 +34,7 @@ const DeleteButton = ({
     return (
         <Button 
             className={cn(
-                "mb-4"
+                "mb-4 bg-slate-700"
             )}
             onClick={onClick}
         >
