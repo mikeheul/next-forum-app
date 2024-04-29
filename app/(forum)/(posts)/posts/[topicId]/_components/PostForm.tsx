@@ -20,7 +20,6 @@ import Editor from "@/components/Editor";
 import { useConfettiStore } from "@/hooks/use-confetti-store";
 import SubTitlePage from "@/components/SubTitlePage";
 
-
 interface PostFormProps {
     topicId?: string;
 }

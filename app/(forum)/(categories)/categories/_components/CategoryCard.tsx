@@ -21,7 +21,7 @@ const CategoryCard = ({
 }: CategoryCardProps) => {
     return (
         <Link href={`/topics/${category.id}`}>
-            <div className={cn("flex flex-col gap-y-2 w-full items-center justify-center border border-slate-200 text-white shadow-xl hover:-translate-y-2 transition duration-500 md:w-[200px] h-[200px] rounded-lg", bgColor)}>
+            <div className={cn("flex flex-col gap-y-2 w-full items-center justify-center border border-slate-200 text-white shadow-xl hover:-translate-y-2 transition duration-500 h-[200px] rounded-lg", bgColor)}>
                 <Icon className="text-white" size={30} />
                 <p>{category.name}</p>
                 <Badge

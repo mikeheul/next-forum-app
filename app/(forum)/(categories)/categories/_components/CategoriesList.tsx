@@ -37,7 +37,7 @@ const CategoriesList = ({
 }: CategoriesListProps) => {
 
     return (
-        <div className="flex flex-col h-full justify-start lg:justify-start w-full md:flex-row md:flex-wrap gap-x-3 gap-y-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 h-full gap-x-3 gap-y-3">
             {categories.map((category:any) => (
                 <CategoryCard 
                     key={category.id}
@@ -48,6 +48,17 @@ const CategoriesList = ({
                 />
             ))}
         </div>
+        // <div className="flex flex-col h-full w-full justify-start lg:justify-start  md:flex-row md:flex-wrap gap-x-3 gap-y-3">
+        //     {categories.map((category:any) => (
+        //         <CategoryCard 
+        //             key={category.id}
+        //             category={category}
+        //             icon={iconMap[category.name]}
+        //             bgColor={colorMap[category.name]}
+        //             topicsCount={category.topics.length}
+        //         />
+        //     ))}
+        // </div>
     );
 }
 
