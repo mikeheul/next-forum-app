@@ -65,8 +65,7 @@ const DeleteButton = ({
                 onClick={onDeleteClick}
             >
                 <Trash2Icon 
-                    size={12}
-                    className="mr-2"
+                    className="h-4 w-4 mr-2"
                 />
                 Delete
             </Button>

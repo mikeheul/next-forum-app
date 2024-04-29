@@ -44,14 +44,12 @@ const LockButton = ({
             onClick={onClick}
         >
             {!isLocked ? (
-                <LockIcon 
-                    size={12}
-                    className="mr-2"
+                <LockIcon
+                    className="h-4 w-4 mr-2"
                     />
             ) : (
-                <UnlockIcon 
-                    size={12}
-                    className="mr-2"
+                <UnlockIcon
+                    className="h-4 w-4 mr-2"
                 />
             ) }
             {isLocked ? "Unlock" : "Lock"}

@@ -48,17 +48,6 @@ const CategoriesList = ({
                 />
             ))}
         </div>
-        // <div className="flex flex-col h-full w-full justify-start lg:justify-start  md:flex-row md:flex-wrap gap-x-3 gap-y-3">
-        //     {categories.map((category:any) => (
-        //         <CategoryCard 
-        //             key={category.id}
-        //             category={category}
-        //             icon={iconMap[category.name]}
-        //             bgColor={colorMap[category.name]}
-        //             topicsCount={category.topics.length}
-        //         />
-        //     ))}
-        // </div>
     );
 }
 

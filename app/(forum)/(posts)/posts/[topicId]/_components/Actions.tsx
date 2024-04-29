@@ -15,7 +15,7 @@ const Actions = ({
     isLocked
 }: ActionsProps) => {
     return (
-        <div className="flex gap-x-2">
+        <div className="flex flex-col gap-y-2 xs:flex-row xs:gap-x-2">
             <LockButton 
                 topicId={topicId}
                 isLocked={isLocked}

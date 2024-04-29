@@ -29,7 +29,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
     })
 
     return (
-        <div className="p-6">
+        <div className="p-2 xs:p-6">
 
             <BackButton />
 
