@@ -9,7 +9,6 @@ import toast from "react-hot-toast";
 
 import { 
     AlertDialog, 
-    AlertDialogOverlay, 
     AlertDialogContent, 
     AlertDialogDescription,
     AlertDialogHeader,  
@@ -30,6 +29,7 @@ const DeleteButton = ({
 
     const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
+    const [returnUrl, setReturnUrl] = useState("");
 
     const onClose = () => setIsOpen(false);
 
@@ -38,14 +38,23 @@ const DeleteButton = ({
             await axios.delete(`/api/topic/${topicId}/delete`);
             toast.success("Topic deleted !");
 
-            router.push(`/topics/${categoryId}`)
+            router.push(returnUrl)
             router.refresh();
         } catch {
             toast.error("Something went wrong");
         }
     }
 
-    const onDeleteClick = () => setIsOpen(true);
+    const onDeleteClick = () => {
+        setIsOpen(true);
+
+        const currentPath = window.location.pathname;
+        if (currentPath.includes("/posts/")) {
+            setReturnUrl(`/topics/${categoryId}`);
+        } else {
+            setReturnUrl(currentPath);
+        } 
+    }
 
     return (
         <>
