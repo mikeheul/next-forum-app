@@ -16,7 +16,7 @@ const TopicCard = ({
     categoryId
 }: TopicCardProps) => {
     return (
-        <div className="bg-slate-100 hover:bg-slate-200/80 shadow-sm rounded-md mb-4 p-6 border border-slate-200">
+        <div className="bg-slate-200 hover:bg-slate-300/80 shadow-sm rounded-md mb-4 p-6 border border-slate-200">
             <Link 
                 className="flex flex-col"
                 key={topic.id}
@@ -34,7 +34,7 @@ const TopicCard = ({
                             <h2 className="text-xl font-semibold mb-2">
                                 {topic.title}
                             </h2>
-                            <div className="flex flex-col md:flex-row text-xs text-gray-600">
+                            <div className="flex flex-col md:flex-row text-xs text-gray-700 mb-3">
                                 <User2Icon className="mr-1" size={14} /><span className="mr-2">{topic.userId}</span>
                                 <CalendarDaysIcon className="mr-1" size={14} /><span>{formatDateTime(topic.createdAt)}</span>
                             </div>

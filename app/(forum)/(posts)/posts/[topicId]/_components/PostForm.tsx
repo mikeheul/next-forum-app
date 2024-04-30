@@ -75,7 +75,7 @@ const PostForm = ({
     };
 
     return (
-        <div>
+        <div className="mt-8">
             <SubTitlePage title="Add a New Post" />
 
             <Form {...form}>

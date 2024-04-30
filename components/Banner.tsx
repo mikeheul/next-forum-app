@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const bannerVariants = cva(
-    "border text-center p-4 text-sm flex items-center w-full",
+    "border text-center p-4 mt-8 text-sm flex items-center w-full",
     {
         variants: {
             variant: {
@@ -33,7 +33,6 @@ const Banner = ({
 }:BannerProps) => {
 
     const Icon = iconMap[variant || "warning"]
-
 
     return ( 
         <div className={cn(bannerVariants({ variant }))}>

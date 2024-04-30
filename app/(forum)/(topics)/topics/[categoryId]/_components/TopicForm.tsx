@@ -56,8 +56,6 @@ const TopicForm = ({
             toast.success("Topic added !");
             form.reset();
 
-            // tiptapContent.innerHTML = '';
-            
             router.refresh();
         } catch {
             toast.error("Something went wrong");
@@ -65,7 +63,7 @@ const TopicForm = ({
     };
 
     return (
-        <div>
+        <div className="">
             <SubTitlePage title="Add a New Topic" />
 
             <Form {...form}>
