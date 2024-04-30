@@ -1,0 +1,6 @@
+- authentification
+- crud post : edit / delete
+- crud topic : edit / delete
+- admin : manage users / global crud
+- clear form input (tiptap) after submit
+- search input (topic title)

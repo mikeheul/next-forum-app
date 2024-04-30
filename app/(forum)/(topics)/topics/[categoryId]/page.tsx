@@ -16,6 +16,10 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
         }
     })
 
+    if (!category) {
+        throw new Error('Category not found'); // Throwing an error will trigger the ErrorComponent
+    }
+
     const topics = await db.topic.findMany({
         where: {
             categoryId: params.categoryId
