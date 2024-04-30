@@ -5,6 +5,8 @@ import TitlePage from "@/components/TitlePage";
 import TopicCard from "./_components/TopicCard";
 import Badge from "@/components/Badge";
 import { Grid3X3Icon } from "lucide-react";
+import TopicsPageLayout from "./_components/TopicsPageLayout";
+
 
 const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
 
@@ -31,24 +33,27 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
     })
 
     return (
-        <div className="p-2 xs:p-6">
 
-            <BackButton />
+        <TopicsPageLayout categoryId={params.categoryId}>
+            <div className="p-6 md:p-12">
 
-            <TitlePage icon={Grid3X3Icon} title={`${category?.name}`} />
+                <BackButton />
 
-            {topics.map(topic => (
-                <TopicCard 
-                    key={topic.id}
-                    topic={topic}
-                    categoryId={params.categoryId}
+                <TitlePage icon={Grid3X3Icon} title={`${category?.name}`} />
+
+                {topics.map(topic => (
+                    <TopicCard 
+                        key={topic.id}
+                        topic={topic}
+                        categoryId={params.categoryId}
+                    />
+                ))}
+
+                <TopicForm 
+                    categoryId={category?.id}
                 />
-            ))}
-
-            <TopicForm 
-                categoryId={category?.id}
-            />
-        </div>
+            </div>
+        </TopicsPageLayout>
     );
 }
 

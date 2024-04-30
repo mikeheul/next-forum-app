@@ -25,7 +25,7 @@ export default function RootLayout({
           <ToastProvider />
           <Navbar />
           <main className="flex justify-between">
-            <div className="flex flex-col w-full h-full p-2 md:p-6">
+            <div className="flex flex-col w-full h-full">
               {children}
             </div>
             {/* <Sidebar /> */}

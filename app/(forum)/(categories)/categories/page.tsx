@@ -27,7 +27,7 @@ const CategoriesPage = async () => {
     categoriesWithTopicCount.sort((a, b) => b.topicCount - a.topicCount);
 
     return (
-        <div className="p-2 xs:p-6">
+        <div className="p-6 md:p-12">
             <TitlePage icon={SparkleIcon} title="Categories" />
 
             <CategoriesList
