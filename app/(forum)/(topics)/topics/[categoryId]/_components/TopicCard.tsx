@@ -16,7 +16,7 @@ const TopicCard = ({
     categoryId
 }: TopicCardProps) => {
     return (
-        <div className="bg-slate-200 hover:bg-slate-300/80 shadow-sm rounded-md mb-4 p-6 border border-slate-200">
+        <div className="bg-slate-200 hover:bg-slate-300/70 shadow-sm rounded-md mb-4 p-6 border border-slate-200">
             <Link 
                 className="flex flex-col"
                 key={topic.id}
