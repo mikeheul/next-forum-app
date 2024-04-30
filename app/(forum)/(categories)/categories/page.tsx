@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
 import TitlePage from "@/components/TitlePage";
 import CategoriesList from "./_components/CategoriesList";
-import { SparkleIcon } from "lucide-react";
+import { MessagesSquareIcon } from "lucide-react";
 
 const CategoriesPage = async () => {
 
@@ -28,7 +28,7 @@ const CategoriesPage = async () => {
 
     return (
         <div className="p-6 md:p-12">
-            <TitlePage icon={SparkleIcon} title="Categories" />
+            <TitlePage icon={MessagesSquareIcon} title="Categories" />
 
             <CategoriesList
                 categories={categoriesWithTopicCount}

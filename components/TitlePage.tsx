@@ -10,9 +10,9 @@ const TitlePage = ({
     icon: Icon
 }: TitlePageProps) => {
     return (
-        <div className="my-6 line-clamp-1 mb-8">
+        <div className="my-6 line-clamp-1 mb-8 bg-slate-100 border-slate-500 rounded-lg p-3">
             <div className="flex item-center gap-x-3">
-                <div className="flex items-center justify-center bg-sky-900 text-white p-3 rounded-full">
+                <div className="flex items-center justify-center bg-sky-900 text-white p-3 rounded-lg">
                     <Icon size={20} />
                 </div>
                 <h1 className="flex items-center justify-center text-xl md:text-3xl text-sky-900 font-semibold">{title}</h1>

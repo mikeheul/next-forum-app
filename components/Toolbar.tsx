@@ -21,7 +21,7 @@ const Toolbar = ({ editor, content }: Props) => {
     return (
         <div
         className="px-4 py-3 rounded-tl-md rounded-tr-md flex justify-between items-start
-        gap-5 w-full flex-wrap border border-gray-700"
+        gap-5 w-full flex-wrap border border-gray-400 bg-slate-800"
         >
         <div className="flex justify-start items-center gap-5 w-full lg:w-10/12 flex-wrap ">
             <button
@@ -31,8 +31,8 @@ const Toolbar = ({ editor, content }: Props) => {
             }}
             className={
                 editor.isActive("bold")
-                ? "bg-slate-800 text-white p-2 rounded-lg"
-                : "text-slate-600"
+                ? "bg-slate-500 text-white p-2 rounded-lg"
+                : "text-slate-300"
             }
             >
             <Bold className="w-5 h-5" />
@@ -44,8 +44,8 @@ const Toolbar = ({ editor, content }: Props) => {
             }}
             className={
                 editor.isActive("italic")
-                ? "bg-slate-800 text-white p-2 rounded-lg"
-                : "text-slate-600"
+                ? "bg-slate-500 text-white p-2 rounded-lg"
+                : "text-slate-300"
             }
             >
             <Italic className="w-5 h-5" />
@@ -57,8 +57,8 @@ const Toolbar = ({ editor, content }: Props) => {
             }}
             className={
                 editor.isActive("strike")
-                ? "bg-slate-800 text-white p-2 rounded-lg"
-                : "text-slate-600"
+                ? "bg-slate-500 text-white p-2 rounded-lg"
+                : "text-slate-300"
             }
             >
             <Strikethrough className="w-5 h-5" />
@@ -70,8 +70,8 @@ const Toolbar = ({ editor, content }: Props) => {
             }}
             className={
                 editor.isActive("underline")
-                ? "bg-slate-800 text-white p-2 rounded-lg"
-                : "text-slate-600"
+                ? "bg-slate-500 text-white p-2 rounded-lg"
+                : "text-slate-300"
             }
             >
             <Underline className="w-5 h-5" />

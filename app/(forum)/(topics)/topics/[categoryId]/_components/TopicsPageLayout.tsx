@@ -31,7 +31,7 @@ const TopicsPageLayout = async ({
             <div className="flex-1">
                 {children}
             </div>
-            <div className="bg-slate-200 mb-4 md:mb-0 min-w-[400px] px-8 py-8 md:px-12 md:py-8 ">
+            <div className="bg-slate-200 mb-4 md:mb-0 min-w-auto md:min-w-[400px] px-8 py-8 md:px-12 md:py-8 lg:px-8">
                 <h2 className="text-xl font-semibold mb-8">Latest topics in {category?.name}</h2>
                 <div className="flex flex-col gap-y-3">
                     {lastTopics.map((topic) => (

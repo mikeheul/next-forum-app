@@ -43,7 +43,7 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
             )}
             </div>
 
-            <div className="relative p-6 mb-4 rounded-lg border bg-sky-900 text-white border-slate-400">
+            <div className="relative p-6 mb-10 rounded-lg border bg-sky-900 text-white border-slate-400">
                 {topic?.isLocked && (
                     <Lock 
                         size={30}
