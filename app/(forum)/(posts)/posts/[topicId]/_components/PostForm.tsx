@@ -61,7 +61,13 @@ const PostForm = ({
             toast.success("Post added !");
             confetti.onOpen()     
             form.reset();
-    
+
+            const tiptapContent = document.querySelector('.ProseMirror p') as HTMLElement;
+            console.log(tiptapContent)
+            if (tiptapContent) {
+                tiptapContent.innerHTML = '';
+            }
+
             router.refresh();
         } catch {
             toast.error("Something went wrong");

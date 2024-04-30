@@ -17,7 +17,6 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Editor from "@/components/Editor";
 import SubTitlePage from "@/components/SubTitlePage";
 import Tiptap from "@/components/TipTap";
 
@@ -56,6 +55,9 @@ const TopicForm = ({
             await axios.post(`/api/category/${categoryId}`, { title: values.title, message: values.message, categoryId });
             toast.success("Topic added !");
             form.reset();
+
+            // tiptapContent.innerHTML = '';
+            
             router.refresh();
         } catch {
             toast.error("Something went wrong");
