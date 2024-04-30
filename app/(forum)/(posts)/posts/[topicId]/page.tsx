@@ -5,7 +5,7 @@ import Banner from "@/components/Banner";
 import Preview from "@/components/Preview";
 import BackButton from "@/components/BackButton";
 import TitlePage from "@/components/TitlePage";
-import { UserIcon, Calendar, Lock } from "lucide-react";
+import { UserIcon, Calendar, Lock, MessageSquareDotIcon } from "lucide-react";
 import PostCard from "./_components/PostCard";
 import Actions from "./_components/Actions";
 
@@ -31,7 +31,7 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
 
             <BackButton />
 
-            <TitlePage title={`${topic?.title}`} />
+            <TitlePage icon={MessageSquareDotIcon} title={`${topic?.title}`} />
 
             <div className="mb-4">
             {topic?.userId === "aaa" && (

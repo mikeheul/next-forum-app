@@ -4,6 +4,7 @@ import BackButton from "@/components/BackButton";
 import TitlePage from "@/components/TitlePage";
 import TopicCard from "./_components/TopicCard";
 import Badge from "@/components/Badge";
+import { Grid3X3Icon } from "lucide-react";
 
 const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
 
@@ -34,7 +35,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
 
             <BackButton />
 
-            <TitlePage title={`${category?.name}`} />
+            <TitlePage icon={Grid3X3Icon} title={`${category?.name}`} />
 
             {topics.map(topic => (
                 <TopicCard 
