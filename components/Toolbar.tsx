@@ -25,56 +25,60 @@ const Toolbar = ({ editor, content }: Props) => {
         >
         <div className="flex justify-start items-center gap-5 w-full lg:w-10/12 flex-wrap ">
             <button
-            onClick={(e) => {
-                e.preventDefault();
-                editor.chain().focus().toggleBold().run();
-            }}
-            className={
-                editor.isActive("bold")
-                ? "bg-slate-500 text-white p-2 rounded-lg"
-                : "text-slate-300"
-            }
+                aria-label="bold"
+                onClick={(e) => {
+                    e.preventDefault();
+                    editor.chain().focus().toggleBold().run();
+                }}
+                className={
+                    editor.isActive("bold")
+                    ? "bg-slate-500 text-white p-2 rounded-lg"
+                    : "text-slate-300"
+                }
             >
-            <Bold className="w-5 h-5" />
+                <Bold className="w-5 h-5" />
             </button>
             <button
-            onClick={(e) => {
-                e.preventDefault();
-                editor.chain().focus().toggleItalic().run();
-            }}
-            className={
-                editor.isActive("italic")
-                ? "bg-slate-500 text-white p-2 rounded-lg"
-                : "text-slate-300"
-            }
+                aria-label="italic"
+                onClick={(e) => {
+                    e.preventDefault();
+                    editor.chain().focus().toggleItalic().run();
+                }}
+                className={
+                    editor.isActive("italic")
+                    ? "bg-slate-500 text-white p-2 rounded-lg"
+                    : "text-slate-300"
+                }
             >
-            <Italic className="w-5 h-5" />
+                <Italic className="w-5 h-5" />
             </button>
             <button
-            onClick={(e) => {
-                e.preventDefault();
-                editor.chain().focus().toggleStrike().run();
-            }}
-            className={
-                editor.isActive("strike")
-                ? "bg-slate-500 text-white p-2 rounded-lg"
-                : "text-slate-300"
-            }
+                aria-label="strike"
+                onClick={(e) => {
+                    e.preventDefault();
+                    editor.chain().focus().toggleStrike().run();
+                }}
+                className={
+                    editor.isActive("strike")
+                    ? "bg-slate-500 text-white p-2 rounded-lg"
+                    : "text-slate-300"
+                }
             >
-            <Strikethrough className="w-5 h-5" />
+                <Strikethrough className="w-5 h-5" />
             </button>
             <button
-            onClick={(e) => {
-                e.preventDefault();
-                editor.chain().focus().toggleUnderline().run();
-            }}
-            className={
-                editor.isActive("underline")
-                ? "bg-slate-500 text-white p-2 rounded-lg"
-                : "text-slate-300"
-            }
+                aria-label="underline"
+                onClick={(e) => {
+                    e.preventDefault();
+                    editor.chain().focus().toggleUnderline().run();
+                }}
+                className={
+                    editor.isActive("underline")
+                    ? "bg-slate-500 text-white p-2 rounded-lg"
+                    : "text-slate-300"
+                }
             >
-            <Underline className="w-5 h-5" />
+                <Underline className="w-5 h-5" />
             </button>
         </div>
         </div>
