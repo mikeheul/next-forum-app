@@ -27,9 +27,11 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
                 }
             }
         },
-        orderBy: {
-            createdAt: 'desc'
-        }
+        orderBy: [
+            {
+                createdAt: 'desc'
+            },
+        ]
     })
 
     return (

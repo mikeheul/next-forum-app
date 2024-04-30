@@ -10,6 +10,12 @@ const TopicsPageLayout = async ({
     children: React.ReactNode;
 }) => {
 
+    const category = await db.category.findUnique({
+        where: {
+            id: categoryId
+        }
+    })
+
     const lastTopics = await db.topic.findMany({
         take: 3,
         where: {
@@ -26,7 +32,7 @@ const TopicsPageLayout = async ({
                 {children}
             </div>
             <div className="bg-slate-200 mb-4 md:mb-0 min-w-[400px] px-8 py-8 md:px-8 md:py-8 ">
-                <h2 className="text-xl font-semibold mb-4">Latest topics</h2>
+                <h2 className="text-xl font-semibold mb-8">Latest topics in {category?.name}</h2>
                 <div className="flex flex-col gap-y-3">
                     {lastTopics.map((topic) => (
                         <Link key={topic.id} href={`/posts/${topic.id}`}>
