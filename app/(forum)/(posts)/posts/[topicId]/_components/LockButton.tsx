@@ -39,7 +39,7 @@ const LockButton = ({
         <Button 
             className={cn(
                 "",
-                !isLocked ? "bg-red-500 hover:bg-red-500/80" : "bg-green-800 hover:bg-green-800/80"
+                !isLocked ? "bg-red-700 hover:bg-red-700/80" : "bg-green-800 hover:bg-green-800/80"
             )}
             onClick={onClick}
         >

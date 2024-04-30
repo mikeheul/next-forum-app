@@ -19,6 +19,7 @@ export const Navbar = () => {
             <button
                 className='inline-flex p-3 hover:bg-slate-800 rounded lg:hidden text-white ml-auto hover:text-white outline-none'
                 onClick={handleClick}
+                aria-label='menu-burger'
             >
             <svg
                 className='w-6 h-6'

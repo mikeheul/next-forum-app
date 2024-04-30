@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Editor from "@/components/Editor";
 import SubTitlePage from "@/components/SubTitlePage";
+import Tiptap from "@/components/TipTap";
 
 interface TopicFormProps {
     categoryId?: string;
@@ -92,7 +93,7 @@ const TopicForm = ({
                         render={({ field }) => (
                             <FormItem>
                                 <FormControl>
-                                    <Editor 
+                                    <Tiptap 
                                         {...field}
                                     />
                                 </FormControl>

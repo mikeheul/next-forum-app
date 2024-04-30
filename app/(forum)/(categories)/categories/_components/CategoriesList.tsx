@@ -19,13 +19,13 @@ const iconMap: Record<Category["name"], LucideIcon> = {
 const colorMap: Record<Category["name"], string> = {
     "Music": "bg-cyan-950",
     "Photography": "bg-cyan-900",
-    "Fitness": "bg-cyan-500",
+    "Fitness": "bg-cyan-900",
     "Accounting": "bg-sky-900",
     "Computer Science": "bg-blue-900",
     "Filming": "bg-indigo-900",
     "Engineering": "bg-teal-900",
     "Web development": "bg-cyan-700",
-    "Graphic Design": "bg-cyan-600" 
+    "Graphic Design": "bg-cyan-800" 
 }
 
 interface CategoriesListProps {
