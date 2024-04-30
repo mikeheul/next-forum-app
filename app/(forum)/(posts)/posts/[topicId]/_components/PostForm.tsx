@@ -59,7 +59,6 @@ const PostForm = ({
         try {
             await axios.post(`/api/post/${topicId}`, { message: values.message, topicId });
             toast.success("Post added !");
-
             confetti.onOpen()     
             form.reset();
     

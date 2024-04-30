@@ -23,9 +23,9 @@ const Tiptap = ({ onChange, content }: any) => {
         onUpdate: ({ editor }) => {
             handleChange(editor.getHTML())
         },
-        onBlur: ({ editor }) => {
-            editor?.commands.clearContent()
-        }
+        // onBlur: ({ editor }) => {
+        //     editor?.commands.clearContent(true)
+        // },
     })
 
     return (
