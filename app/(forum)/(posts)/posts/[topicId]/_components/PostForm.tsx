@@ -16,11 +16,9 @@ import {
 } from "@/components/ui/form";
 
 import { Button } from "@/components/ui/button";
-import Editor from "@/components/Editor";
 import { useConfettiStore } from "@/hooks/use-confetti-store";
 import SubTitlePage from "@/components/SubTitlePage";
 import Tiptap from "@/components/TipTap";
-import { useRef } from "react";
 
 interface PostFormProps {
     topicId?: string;

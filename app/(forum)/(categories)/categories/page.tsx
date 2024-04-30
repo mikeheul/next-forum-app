@@ -18,6 +18,10 @@ const CategoriesPage = async () => {
         }
     });
 
+    if (!categories) {
+        throw new Error('Categories not found');
+    }
+
     const categoriesWithTopicCount = categories.map(category => ({
         ...category,
         topicCount: category.topics.length

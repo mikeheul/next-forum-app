@@ -17,6 +17,10 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
         },
     })
 
+    if (!topic) {
+        throw new Error('Topic not found');
+    }
+
     const posts = await db.post.findMany({
         where: {
             topicId: params.topicId
@@ -25,6 +29,10 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
             createdAt: 'asc'
         }
     })
+
+    if (!posts) {
+        throw new Error('Posts not found');
+    }
 
     return (
         <div className="p-6 md:p-12">

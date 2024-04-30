@@ -3,10 +3,8 @@ import TopicForm from "./_components/TopicForm";
 import BackButton from "@/components/BackButton";
 import TitlePage from "@/components/TitlePage";
 import TopicCard from "./_components/TopicCard";
-import Badge from "@/components/Badge";
 import { Grid3X3Icon } from "lucide-react";
 import TopicsPageLayout from "./_components/TopicsPageLayout";
-
 
 const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
 
@@ -17,7 +15,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
     })
 
     if (!category) {
-        throw new Error('Category not found'); // Throwing an error will trigger the ErrorComponent
+        throw new Error('Category not found');
     }
 
     const topics = await db.topic.findMany({
@@ -37,6 +35,10 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
             },
         ]
     })
+
+    if (!topics) {
+        throw new Error('Topics not found');
+    }
 
     return (
 
