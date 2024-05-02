@@ -21,14 +21,14 @@ const NavbarRoutes = () => {
                     />
 
                 ) : (
-                    <>
-                        <Link className="text-white" href="/sign-in">
+                    <div className="flex flex-col lg:flex-row gap-x-4">
+                        <Link className="text-white border border-white/20 bg-slate-800 hover:bg-slate-800/70 px-4 py-2 rounded-lg" href="/sign-in">
                             Sign In
                         </Link>
-                        <Link className="text-white" href="/sign-up">
+                        <Link className="text-white border border-white/20 hover:bg-slate-600 px-4 py-2 rounded-lg" href="/sign-up">
                             Sign Up
                         </Link>
-                    </>
+                    </div>
                 )} 
             </div>
         </>

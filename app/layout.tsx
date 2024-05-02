@@ -22,8 +22,8 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <ConfettiProvider />
         <body className={inter.className}>
-            <ConfettiProvider />
             <ToastProvider />
             <Navbar />
             <main className="flex justify-between">
