@@ -8,11 +8,11 @@ import TitlePage from "@/components/TitlePage";
 import { UserIcon, Calendar, Lock, MessageSquareDotIcon } from "lucide-react";
 import PostCard from "./_components/PostCard";
 import Actions from "./_components/Actions";
-// import { useUser } from "@clerk/nextjs";
+//import { useUser } from "@clerk/nextjs";
 
 const PostsPage = async ({ params }: { params: { topicId: string } }) => {
 
-    // const { user } = useUser();
+    //const { user } = useUser();
 
     const topic = await db.topic.findUnique({
         where: {
@@ -39,19 +39,19 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
 
     return (
         <div className="p-6 md:p-12">
-
+            
             <BackButton />
 
             <TitlePage icon={MessageSquareDotIcon} title={`${topic?.title}`} />
 
             <div className="mb-4">
-            {topic?.userId === "aaa" && (
+            {/* {topic?.userId === user.id && ( */}
                 <Actions 
                     categoryId={topic.categoryId}
                     topicId={params.topicId}
                     isLocked={!!topic?.isLocked}
                 />
-            )}
+            {/* )} */}
             </div>
 
             <div className="relative p-6 mb-10 rounded-lg border bg-sky-900 text-white border-slate-400">
