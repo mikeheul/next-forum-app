@@ -1,11 +1,9 @@
 "use client";
 
 import Actions from "@/app/(forum)/(posts)/posts/[topicId]/_components/Actions";
-import UserProfile from "@/app/api/(auth)/user";
 import Badge from "@/components/Badge";
 import { formatDateTime } from "@/lib/format-datetime";
 import { useUser } from "@clerk/nextjs";
-import { auth, getAuth } from "@clerk/nextjs/server";
 import { CalendarDaysIcon, Lock, User2Icon } from "lucide-react";
 import Link from "next/link";
 

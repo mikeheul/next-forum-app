@@ -8,8 +8,11 @@ import TitlePage from "@/components/TitlePage";
 import { UserIcon, Calendar, Lock, MessageSquareDotIcon } from "lucide-react";
 import PostCard from "./_components/PostCard";
 import Actions from "./_components/Actions";
+// import { useUser } from "@clerk/nextjs";
 
 const PostsPage = async ({ params }: { params: { topicId: string } }) => {
+
+    // const { user } = useUser();
 
     const topic = await db.topic.findUnique({
         where: {
