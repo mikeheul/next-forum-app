@@ -1,6 +1,7 @@
 "use client";
 
 import Actions from "@/app/(forum)/(posts)/posts/[topicId]/_components/Actions";
+import UserProfile from "@/app/api/(auth)/user";
 import Badge from "@/components/Badge";
 import { formatDateTime } from "@/lib/format-datetime";
 import { CalendarDaysIcon, Lock, User2Icon } from "lucide-react";
@@ -15,6 +16,7 @@ const TopicCard = ({
     topic,
     categoryId
 }: TopicCardProps) => {
+
     return (
         <div className="bg-slate-200 hover:bg-slate-300/70 shadow-sm rounded-md mb-4 p-6 border border-slate-200">
             <Link 
