@@ -19,6 +19,8 @@ import { Button } from "@/components/ui/button";
 import { useConfettiStore } from "@/hooks/use-confetti-store";
 import SubTitlePage from "@/components/SubTitlePage";
 import Tiptap from "@/components/TipTap";
+import { useState } from "react";
+import { Editor } from "@tiptap/react";
 
 interface PostFormProps {
     topicId?: string;
@@ -58,14 +60,14 @@ const PostForm = ({
             await axios.post(`/api/post/${topicId}`, { message: values.message, topicId });
             toast.success("Post added !");
             confetti.onOpen()     
-            form.reset();
-
-            const tiptapContent = document.querySelector('.ProseMirror p') as HTMLElement;
+            
+            const tiptapContent = document.querySelector('.ProseMirror') as HTMLElement;
             console.log(tiptapContent)
             if (tiptapContent) {
                 tiptapContent.innerHTML = '';
             }
-
+            
+            form.reset();
             router.refresh();
         } catch {
             toast.error("Something went wrong");
