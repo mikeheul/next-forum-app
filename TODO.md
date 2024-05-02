@@ -1,4 +1,3 @@
-- authentification
 - crud post : edit / delete
 - crud topic : edit / delete
 - admin : manage users / global crud
