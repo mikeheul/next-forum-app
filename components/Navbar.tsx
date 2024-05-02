@@ -1,7 +1,9 @@
 "use client";
 
+import { UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import { useState } from 'react';
+import NavbarRoutes from './NavbarRoutes';
 
 export const Navbar = () => {
     const [active, setActive] = useState(false);
@@ -42,14 +44,7 @@ export const Navbar = () => {
                     active ? '' : 'hidden'
                 }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
             >
-                <div className='text-white lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto gap-x-2 transition-all duration-500'>
-                    <Link href='/'>
-                        Register
-                    </Link>
-                    <Link href='/'>
-                        Login
-                    </Link>
-                </div>
+                <NavbarRoutes />
             </div>
         </nav>
         </>

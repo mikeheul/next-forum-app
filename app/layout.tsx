@@ -5,6 +5,7 @@ import { ConfettiProvider } from "@/components/providers/confetti-provider";
 import ToastProvider from "@/components/providers/toaster-provider";
 import { Navbar } from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,18 +20,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-          <ConfettiProvider />
-          <ToastProvider />
-          <Navbar />
-          <main className="flex justify-between">
-            <div className="flex flex-col w-full h-full">
-              {children}
-            </div>
-            {/* <Sidebar /> */}
-          </main>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+            <ConfettiProvider />
+            <ToastProvider />
+            <Navbar />
+            <main className="flex justify-between">
+              <div className="flex flex-col w-full h-full">
+                {children}
+              </div>
+              {/* <Sidebar /> */}
+            </main>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
