@@ -2,6 +2,7 @@
 
 import Preview from "@/components/Preview";
 import { formatDateTime } from "@/lib/format-datetime";
+import { User, clerkClient } from "@clerk/nextjs/server";
 import { Post } from "@prisma/client";
 
 interface PostCardProps {

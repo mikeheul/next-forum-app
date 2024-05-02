@@ -6,7 +6,6 @@ import TopicCard from "./_components/TopicCard";
 import { Grid3X3Icon } from "lucide-react";
 import TopicsPageLayout from "./_components/TopicsPageLayout";
 import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
 import Banner from "@/components/Banner";
 
 const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
@@ -30,7 +29,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
                 select: {
                     id: true
                 }
-            }
+            },
         },
         orderBy: [
             {
@@ -44,7 +43,6 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
     }
 
     const { userId } = auth();
-    // if(!userId) return redirect("/")
 
     return (
 
