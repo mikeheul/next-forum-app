@@ -1,4 +1,6 @@
 import { db } from "@/lib/db";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 import { NextResponse } from "next/server"; 
 
 export async function POST(
@@ -10,11 +12,14 @@ export async function POST(
 
         const categoryId = params.categoryId;
 
+        const { userId } = auth();
+        if(!userId) redirect("/") 
+
         const topic = await db.topic.create({
             data: { 
                 title,
                 categoryId,
-                userId: 'aaa'
+                userId
             }
         })
 
@@ -22,7 +27,7 @@ export async function POST(
             data: {
                 message,
                 topicId: topic.id,
-                userId: 'aaa'
+                userId
             }
         });
 
