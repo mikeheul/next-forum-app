@@ -4,7 +4,6 @@ import Actions from "@/app/(forum)/(posts)/posts/[topicId]/_components/Actions";
 import Badge from "@/components/Badge";
 import { formatDateTime } from "@/lib/format-datetime";
 import { useUser } from "@clerk/nextjs";
-import { clerkClient } from "@clerk/nextjs/server";
 import { CalendarDaysIcon, Lock, User2Icon } from "lucide-react";
 import Link from "next/link";
 

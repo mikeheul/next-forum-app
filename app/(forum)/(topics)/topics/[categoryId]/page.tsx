@@ -5,6 +5,9 @@ import TitlePage from "@/components/TitlePage";
 import TopicCard from "./_components/TopicCard";
 import { Grid3X3Icon } from "lucide-react";
 import TopicsPageLayout from "./_components/TopicsPageLayout";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import Banner from "@/components/Banner";
 
 const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
 
@@ -40,6 +43,9 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
         throw new Error('Topics not found');
     }
 
+    const { userId } = auth();
+    // if(!userId) return redirect("/")
+
     return (
 
         <TopicsPageLayout categoryId={params.categoryId}>
@@ -57,9 +63,15 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
                     />
                 ))}
 
-                <TopicForm 
-                    categoryId={category?.id}
-                />
+                {userId ? (
+                    <TopicForm 
+                        categoryId={category?.id}
+                    />
+                ) : (
+                    <Banner 
+                        label="You have to signin to create a new topic!"
+                    />
+                )}
             </div>
         </TopicsPageLayout>
     );

@@ -13,6 +13,7 @@ const PostCard = ({
     topic,
     post
 }: PostCardProps) => {
+
     return (
         <div
             className="flex flex-col md:flex-row gap-x-2 border rounded-lg overflow-hidden border-slate-200 mb-4"
