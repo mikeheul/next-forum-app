@@ -9,6 +9,7 @@ import { UserIcon, Calendar, Lock, MessageSquareDotIcon } from "lucide-react";
 import PostCard from "./_components/PostCard";
 import Actions from "./_components/Actions";
 import { auth, clerkClient } from "@clerk/nextjs/server";
+import { getUserById } from "@/lib/get-user";
 
 const PostsPage = async ({ params }: { params: { topicId: string } }) => {
 
@@ -38,6 +39,9 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
     if (!posts) {
         throw new Error('Posts not found');
     }
+
+    const postUsers = await Promise.all(posts.map(post => getUserById(post?.userId)));
+    console.log(postUsers)
 
     return (
         <div className="p-6 md:p-12">
@@ -80,6 +84,7 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
                         key={post.id}
                         topic={topic}
                         post={post}
+                        userFullName={postUsers[index]}
                     />
                 ) : null
             ))}

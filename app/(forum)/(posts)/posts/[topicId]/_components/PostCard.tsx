@@ -13,11 +13,13 @@ import toast from "react-hot-toast";
 interface PostCardProps {
     topic: any;
     post: Post;
+    userFullName: string;
 }
 
 const PostCard = ({
     topic,
-    post
+    post,
+    userFullName
 }: PostCardProps) => {
 
     const { userId } = useAuth();
@@ -41,7 +43,7 @@ const PostCard = ({
             key={post.id}  
         >
             <div className="flex flex-col justify-center p-6 bg-slate-700 text-white md:min-w-[300px]">
-                <p className="text-sm">{post.userId}</p>
+                <p className="text-sm">{userFullName}</p>
                 <p className="text-xs">{formatDateTime(post.createdAt)}</p>
             </div>
             <div className="flex flex-col p-6 w-full">
