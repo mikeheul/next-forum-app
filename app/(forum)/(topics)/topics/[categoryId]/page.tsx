@@ -7,6 +7,7 @@ import { Grid3X3Icon } from "lucide-react";
 import TopicsPageLayout from "./_components/TopicsPageLayout";
 import { auth } from "@clerk/nextjs/server";
 import Banner from "@/components/Banner";
+import { getUserById } from "@/lib/get-user";
 
 const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
 
@@ -43,6 +44,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
     }
 
     const { userId } = auth();
+    const topicUsers = await Promise.all(topics.map(topic => getUserById(topic?.userId!)));
 
     return (
 
@@ -53,11 +55,12 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
 
                 <TitlePage icon={Grid3X3Icon} title={`${category?.name}`} />
 
-                {topics.map(topic => (
+                {topics.map((topic, index) => (
                     <TopicCard 
                         key={topic.id}
                         topic={topic}
                         categoryId={params.categoryId}
+                        userFullName={topicUsers[index]}
                     />
                 ))}
 

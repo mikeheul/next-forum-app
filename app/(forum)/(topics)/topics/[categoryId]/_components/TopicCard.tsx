@@ -10,11 +10,13 @@ import Link from "next/link";
 interface TopicCardProps {
     topic: any;
     categoryId: string;
+    userFullName: string;
 }
 
 const TopicCard = ({
     topic,
-    categoryId
+    categoryId,
+    userFullName
 }: TopicCardProps) => {
 
     const { user } = useUser();
@@ -41,9 +43,10 @@ const TopicCard = ({
                             <div className="flex flex-col md:flex-row text-xs text-gray-700 mb-3">
                                 <User2Icon className="mr-1" size={14} />
                                 <span className="mr-2">
-                                    {(user && user.id === topic.userId) 
+                                    {/* {(user && user.id === topic.userId) 
                                     ? user.fullName 
-                                    : topic.userId } 
+                                    : topic.userId }  */}
+                                    {userFullName}
                                 </span>
                                 <CalendarDaysIcon className="mr-1" size={14} /><span>{formatDateTime(topic.createdAt)}</span>
                             </div>

@@ -41,8 +41,7 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
     }
 
     const postUsers = await Promise.all(posts.map(post => getUserById(post?.userId)));
-    console.log(postUsers)
-
+    
     return (
         <div className="p-6 md:p-12">
             
