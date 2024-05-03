@@ -44,7 +44,7 @@ const PostCard = ({
             key={post.id}  
         >
             <div className="flex flex-col justify-center p-6 bg-slate-700 text-white md:min-w-[300px]">
-                <Image src={userPost.img} alt="avatar" width={32} height={32} className="rounded-full border-2 border-white" />
+                <Image src={userPost.img} alt="avatar" width={32} height={32} className="rounded-full mb-3" />
                 <p className="text-sm">{userPost.fullName}</p>
                 <p className="text-xs">{formatDateTime(post.createdAt)}</p>
             </div>

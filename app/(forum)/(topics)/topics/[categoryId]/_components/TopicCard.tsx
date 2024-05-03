@@ -42,12 +42,12 @@ const TopicCard = ({
                             <h2 className="text-xl font-semibold mb-2">
                                 {topic.title}
                             </h2>
-                            <div className="flex flex-col text-xs text-gray-700 mb-3">
-                                <span>{formatDateTime(topic.createdAt)}</span>
-                                <span className="flex items-center gap-x-3">
+                            <div className="flex flex-col text-xs text-gray-700 mb-3 bg-slate-100 rounded-full">
+                                <div className="flex items-center gap-x-2 p-1 pr-2">
                                     <Image src={userTopic.img} alt="avatar" width={32} height={32} className="rounded-full" />
-                                    {userTopic.fullName}
-                                </span>
+                                    <span>{userTopic.fullName}</span>
+                                    <span>{formatDateTime(topic.createdAt)}</span>
+                                </div>
                             </div>
                             <Badge
                                 count={topic.posts.length}
