@@ -70,7 +70,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
                     />
                 ) : (
                     <Banner 
-                        label="You have to signin to create a new topic!"
+                        label="You have to sign in to create a new topic!"
                     />
                 )}
             </div>

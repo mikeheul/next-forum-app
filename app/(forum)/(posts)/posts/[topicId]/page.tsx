@@ -100,7 +100,7 @@ const PostsPage = async ({ params }: { params: { topicId: string } }) => {
                 )
             ) : (
                 <Banner 
-                    label="You have to signin to create a new post!"
+                    label="You have to sign in to create a new post!"
                 />
             )}
 
