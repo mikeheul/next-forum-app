@@ -4,8 +4,7 @@ import Actions from "@/app/(forum)/(posts)/posts/[topicId]/_components/Actions";
 import Badge from "@/components/Badge";
 import { formatDateTime } from "@/lib/format-datetime";
 import { useUser } from "@clerk/nextjs";
-import { User } from "@clerk/nextjs/server";
-import { CalendarDaysIcon, Lock, User2Icon } from "lucide-react";
+import { Lock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -42,8 +41,8 @@ const TopicCard = ({
                             <h2 className="text-xl font-semibold mb-2">
                                 {topic.title}
                             </h2>
-                            <div className="flex flex-col text-xs text-gray-700 mb-3 bg-slate-100 rounded-full">
-                                <div className="flex items-center gap-x-2 p-1 pr-2">
+                            <div className="flex flex-col text-xs text-gray-700 mb-3 bg-slate-100 rounded-md xs:rounded-full">
+                                <div className="flex flex-col xs:flex-row text-center items-center gap-x-2 p-1 pr-2">
                                     <Image src={userTopic.img} alt="avatar" width={32} height={32} className="rounded-full" />
                                     <span>{userTopic.fullName}</span>
                                     <span>{formatDateTime(topic.createdAt)}</span>

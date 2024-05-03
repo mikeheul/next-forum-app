@@ -40,12 +40,12 @@ const TopicsPageLayout = async ({
                         <div className="p-6 rounded-lg bg-white shadow-md gap-x-2 hover:bg-slate-100">
                             <p className="flex items-center gap-x-2 font-medium">
                                 {topic.isLocked ? (
-                                    <LockIcon className="text-red-600" size={15} />
+                                    <LockIcon className="hidden xs:block text-red-600" size={15} />
                                 ) : (
-                                    <UnlockIcon className="text-green-600" size={15} />
+                                    <UnlockIcon className="hidden xs:block text-green-600" size={15} />
                                 )}
                             {topic.title}</p>
-                            <p className="text-xs">{formatDateTime(topic.createdAt)} by {topic.userId}</p>
+                            <p className="text-xs">{formatDateTime(topic.createdAt)}</p>
                         </div>
                     </Link>
                 ))}
