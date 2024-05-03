@@ -60,7 +60,7 @@ const TopicsPage = async ({ params }: { params: { categoryId: string } }) => {
                         key={topic.id}
                         topic={topic}
                         categoryId={params.categoryId}
-                        userFullName={topicUsers[index]}
+                        userTopic={topicUsers[index]}
                     />
                 ))}
 

@@ -4,19 +4,21 @@ import Actions from "@/app/(forum)/(posts)/posts/[topicId]/_components/Actions";
 import Badge from "@/components/Badge";
 import { formatDateTime } from "@/lib/format-datetime";
 import { useUser } from "@clerk/nextjs";
+import { User } from "@clerk/nextjs/server";
 import { CalendarDaysIcon, Lock, User2Icon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 interface TopicCardProps {
     topic: any;
     categoryId: string;
-    userFullName: string;
+    userTopic: any;
 }
 
 const TopicCard = ({
     topic,
     categoryId,
-    userFullName
+    userTopic
 }: TopicCardProps) => {
 
     const { user } = useUser();
@@ -40,15 +42,12 @@ const TopicCard = ({
                             <h2 className="text-xl font-semibold mb-2">
                                 {topic.title}
                             </h2>
-                            <div className="flex flex-col md:flex-row text-xs text-gray-700 mb-3">
-                                <User2Icon className="mr-1" size={14} />
-                                <span className="mr-2">
-                                    {/* {(user && user.id === topic.userId) 
-                                    ? user.fullName 
-                                    : topic.userId }  */}
-                                    {userFullName}
+                            <div className="flex flex-col text-xs text-gray-700 mb-3">
+                                <span>{formatDateTime(topic.createdAt)}</span>
+                                <span className="flex items-center gap-x-3">
+                                    <Image src={userTopic.img} alt="avatar" width={32} height={32} className="rounded-full" />
+                                    {userTopic.fullName}
                                 </span>
-                                <CalendarDaysIcon className="mr-1" size={14} /><span>{formatDateTime(topic.createdAt)}</span>
                             </div>
                             <Badge
                                 count={topic.posts.length}

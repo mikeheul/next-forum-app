@@ -1,4 +1,4 @@
-- crud post : edit / delete
+- crud post : edit
 - crud topic : edit / delete
 - admin : manage users / global crud
 - clear form input (tiptap) after submit
